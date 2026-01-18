@@ -36,7 +36,13 @@ body {
 
 /* Smooth transitions for all elements */
 * {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Remove transitions for transform and animations */
+*[class*="animate-"],
+*[class*="transition-"] {
+  transition: none;
 }
 
 /* Custom scrollbar */

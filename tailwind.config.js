@@ -81,12 +81,12 @@ export default {
          Animations
       ======================= */
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'slide-in-left': 'slideInLeft 0.6s ease-out',
-        'slide-in-right': 'slideInRight 0.6s ease-out',
-        'scale-in': 'scaleIn 0.5s ease-out',
-        'bounce-in': 'bounceIn 0.8s ease-out',
+        'fade-in': 'fadeIn 1s ease-out',
+        'slide-up': 'slideUp 1.2s ease-out',
+        'slide-in-left': 'slideInLeft 1s ease-out',
+        'slide-in-right': 'slideInRight 1s ease-out',
+        'scale-in': 'scaleIn 0.8s ease-out',
+        'bounce-in': 'bounceIn 1.2s ease-out',
       },
       keyframes: {
         fadeIn: {
@@ -94,25 +94,25 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-30px)' },
+          '0%': { opacity: '0', transform: 'translateX(-40px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '0%': { opacity: '0', transform: 'translateX(40px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
         bounceIn: {
           '0%': { opacity: '0', transform: 'scale(0.3)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
-          '70%': { transform: 'scale(0.9)' },
+          '50%': { opacity: '1', transform: 'scale(1.02)' },
+          '70%': { transform: 'scale(0.98)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },

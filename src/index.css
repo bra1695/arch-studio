@@ -7,13 +7,52 @@ body {
 }
 
 .watermark-text {
-  font-size: 15rem;
+  font-size: 8rem;
   font-weight: 700;
   color: #f3f4f6;
   position: absolute;
-  top: -2rem;
-  left: 10rem;
+  top: -1rem;
+  left: 4rem;
   z-index: 50;
   user-select: none;
   pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .watermark-text {
+    font-size: 12rem;
+    top: -1.5rem;
+    left: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .watermark-text {
+    font-size: 15rem;
+    top: -2rem;
+    left: 10rem;
+  }
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

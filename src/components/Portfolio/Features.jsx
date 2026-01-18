@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import useScreenSize from '@/hooks/useScreenSize'
 import image228bDesktop from '@/assets/portfolio/desktop/image-228b.jpg'
 import imageDelSolDesktop from '@/assets/portfolio/desktop/image-del-sol.jpg'
@@ -35,73 +36,74 @@ import Feature from './Feature'
 
 const Features = () => {
   const featureImages = [
-  {
-    title: 'Project 228B',
-    desktop: image228bDesktop,
-    tablet: image228bTablet,
-    mobile: image228bMobile,
-  },
-  {
-    title: 'Del Sol',
-    desktop: imageDelSolDesktop,
-    tablet: imageDelSolTablet,
-    mobile: imageDelSolMobile,
-  },
-  {
-    title: 'Prototype',
-    desktop: imagePrototypeDesktop,
-    tablet: imagePrototypeTablet,
-    mobile: imagePrototypeMobile,
-  },
-  {
-    title: 'Edelweiss',
-    desktop: imageEdelweissDesktop,
-    tablet: imageEdelweissDesktop,
-    mobile: imageEdelweissDesktop,
-  },
-  {
-    title: 'Eebox Building',
-    desktop: imageEeboxDesktop,
-    tablet: imageEeboxTablet,
-    mobile: imageEeboxMobile,
-  },
-  {
-    title: 'Hypers',
-    desktop: imageHyperDesktop,
-    tablet: imageHyperTablet,
-    mobile: imageHyperMobile,
-  },
-  {
-    title: 'Netcry',
-    desktop: imageNetcryDesktop,
-    tablet: imageNetcryTablet,
-    mobile: imageNetcryMobile,
-  },
-  {
-    title: 'Paramour',
-    desktop: imageParamourDesktop,
-    tablet: imageParamourTablet,
-    mobile: imageParamourMobile,
-  },
-  {
-    title: 'Seraph',
-    desktop: imageSeraphDesktop,
-    tablet: imageSeraphTablet,
-    mobile: imageSeraphMobile,
-  },
-  {
-    title: 'Trinity Bank',
-    desktop: imageTrinityDesktop,
-    tablet: imageTrinityTablet,
-    mobile: imageTrinityMobile,
-  },
-  {
-    title: 'SXIV Tower',
-    desktop: imageSxivDesktop,
-    tablet: imageSxivTablet,
-    mobile: imageSxivMobile,
-  },
-]
+    {
+      title: 'Project 228B',
+      desktop: image228bDesktop,
+      tablet: image228bTablet,
+      mobile: image228bMobile,
+    },
+    {
+      title: 'Del Sol',
+      desktop: imageDelSolDesktop,
+      tablet: imageDelSolTablet,
+      mobile: imageDelSolMobile,
+    },
+    {
+      title: 'Prototype',
+      desktop: imagePrototypeDesktop,
+      tablet: imagePrototypeTablet,
+      mobile: imagePrototypeMobile,
+    },
+    {
+      title: 'Edelweiss',
+      desktop: imageEdelweissDesktop,
+      tablet: imageEdelweissDesktop,
+      mobile: imageEdelweissDesktop,
+    },
+    {
+      title: 'Eebox Building',
+      desktop: imageEeboxDesktop,
+      tablet: imageEeboxTablet,
+      mobile: imageEeboxMobile,
+    },
+    {
+      title: 'Hypers',
+      desktop: imageHyperDesktop,
+      tablet: imageHyperTablet,
+      mobile: imageHyperMobile,
+    },
+    {
+      title: 'Netcry',
+      desktop: imageNetcryDesktop,
+      tablet: imageNetcryTablet,
+      mobile: imageNetcryMobile,
+    },
+    {
+      title: 'Paramour',
+      desktop: imageParamourDesktop,
+      tablet: imageParamourTablet,
+      mobile: imageParamourMobile,
+    },
+    {
+      title: 'Seraph',
+      desktop: imageSeraphDesktop,
+      tablet: imageSeraphTablet,
+      mobile: imageSeraphMobile,
+    },
+    {
+      title: 'Trinity Bank',
+      desktop: imageTrinityDesktop,
+      tablet: imageTrinityTablet,
+      mobile: imageTrinityMobile,
+    },
+    {
+      title: 'SXIV Tower',
+      desktop: imageSxivDesktop,
+      tablet: imageSxivTablet,
+      mobile: imageSxivMobile,
+    },
+  ]
+  
   const screenSize = useScreenSize()
   const getImage = (index) => {
     const item = featureImages[index]
@@ -116,18 +118,34 @@ const Features = () => {
   }
 
   return (
-    <div className='relative my-12 font-spartan'>
-       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-7xl mx-40 px-4 sm:px-6 lg:px-0'>
+    <motion.div 
+      className='relative my-8 md:my-12 font-spartan'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 max-w-7xl mx-4 md:mx-8 lg:mx-40 px-4 sm:px-6 lg:px-0'>
         {featureImages.map((item, index) => (
-           <Feature
-             key={index}
-             title={item.title}
-             image={getImage(index)}
-             index={index}
-           />
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: index * 0.1,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            <Feature
+              title={item.title}
+              image={getImage(index)}
+              index={index}
+            />
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

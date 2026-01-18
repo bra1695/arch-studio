@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.watermark-text {
+  font-size: 15rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  position: absolute;
+  top: -2rem;
+  left: 10rem;
+  z-index: 50;
+  user-select: none;
+  pointer-events: none;
+}
